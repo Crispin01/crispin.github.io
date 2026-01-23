@@ -5,77 +5,189 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frases Motivadoras</title>
     <style>
-        /* Estilos Generales */
-        body, html {
+        /* --- ESTILOS GENERALES --- */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            height: 100%;
-        }
-
-        /* Configuración de las secciones */
-        .seccion {
-            height: 100vh; /* Ocupa el 100% de la altura de la ventana */
-            display: flex; /* Usamos Flexbox para centrar el contenido */
+            overflow: hidden; /* Evita scroll innecesario en escritorio */
+            height: 100vh;
+            display: flex;
             flex-direction: column;
-            justify-content: center; /* Centrado vertical */
-            align-items: center; /* Centrado horizontal */
+        }
+
+        h1.main-title {
             text-align: center;
-            padding: 20px;
-            color: white; /* Texto en blanco */
-        }
-
-        /* Estilo del texto */
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            max-width: 800px;
-            line-height: 1.2;
-        }
-
-        p {
+            margin: 0;
+            padding: 15px;
+            background: #111;
+            color: white;
             font-size: 1.5rem;
-            font-style: italic;
-            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 10;
         }
 
-        /* Colores de fondo para cada sección */
-        .uno {
-            background-color: #3498db; /* Azul */
+        /* --- CONTENEDOR DE PANELES --- */
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%; /* Ocupa el resto de la altura */
         }
 
-        .dos {
-            background-color: #e74c3c; /* Rojo */
+        /* --- ESTILOS DE CADA PANEL --- */
+        .panel {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+            border-radius: 0;
+            color: #fff;
+            cursor: pointer;
+            flex: 0.5; /* Todos empiezan pequeños */
+            margin: 0;
+            position: relative;
+            transition: flex 0.7s cubic-bezier(0.05, 0.6, 0.4, 0.9); /* Animación suave */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Texto abajo */
+            padding: 20px;
+            overflow: hidden;
         }
 
-        .tres {
-            background-color: #2ecc71; /* Verde */
+        /* Capa oscura para que el texto se lea mejor */
+        .panel::before {
+            content: '';
+            position: absolute;
+            top: 0; 
+            left: 0;
+            width: 100%; 
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Sombra */
+            transition: background 0.5s;
         }
 
-        /* Diseño responsivo para móviles */
+        /* Estilo cuando el panel está ACTIVO (abierto) */
+        .panel.active {
+            flex: 5; /* Se agranda 10 veces más que los otros */
+        }
+
+        .panel.active::before {
+            background: rgba(0, 0, 0, 0.1); /* Aclara la imagen al activar */
+        }
+
+        /* --- TEXTO DENTRO DE LOS PANELES --- */
+        .panel h3 {
+            font-size: 24px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            margin: 0;
+            opacity: 1; /* Siempre visible el título */
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            transition: opacity 0.3s ease-in 0.4s;
+        }
+
+        .panel p {
+            font-size: 18px;
+            opacity: 0; /* Frase oculta al principio */
+            max-width: 600px;
+            margin-bottom: 60px; /* Espacio para el título */
+            z-index: 2;
+            transform: translateX(-20px);
+            transition: all 0.5s ease-in 0.2s; /* Retraso para que aparezca después de expandirse */
+        }
+
+        /* Mostrar frase solo cuando está activo */
+        .panel.active p {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* --- IMÁGENES DE FONDO (PERSONALIZA AQUÍ) --- */
+        /* Usamos placeholders. Cambia las URL por tus imágenes reales */
+        
+        /* Sección 1: Rocky Balboa */
+        .panel:nth-of-type(1) {
+            background-image: url('https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1920&auto=format&fit=crop'); 
+        }
+
+        /* Sección 2: Einstein (representación) */
+        .panel:nth-of-type(2) {
+            background-image: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=1920&auto=format&fit=crop');
+        }
+
+        /* Sección 3: Yoda / Espacio */
+        .panel:nth-of-type(3) {
+            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop');
+        }
+
+        /* --- RESPONSIVE (MÓVILES) --- */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
+            .container {
+                flex-direction: column; /* Apilar verticalmente */
+            }
+            
+            .panel {
+                width: 100%; /* Ancho completo */
+            }
+            
+            .panel.active {
+                flex: 5; /* Crece en altura */
+            }
+
+            .panel h3 {
+                font-size: 18px;
+            }
+            
+            .panel p {
+                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
 
-    <section class="seccion uno">
-        <h1>"El único modo de hacer un gran trabajo es amar lo que haces."</h1>
-        <p>- Steve Jobs</p>
-    </section>
+    <h1 class="main-title">Frases Motivadoras</h1>
 
-    <section class="seccion dos">
-        <h1>"El éxito es la suma de pequeños esfuerzos repetidos día tras día."</h1>
-        <p>- Robert Collier</p>
-    </section>
+    <div class="container">
+        <div class="panel active"> <h3>La Persistencia</h3>
+            <p>"No importa cuán fuerte golpees, sino cuán fuerte pueden golpearte y seguir avanzando." - Rocky Balboa</p>
+        </div>
 
-    <section class="seccion tres">
-        <h1>"No cuentes los días, haz que los días cuenten."</h1>
-        <p>- Muhammad Ali</p>
-    </section>
+        <div class="panel">
+            <h3>El Conocimiento</h3>
+            <p>"La imaginación es más importante que el conocimiento. El conocimiento es limitado." - Albert Einstein</p>
+        </div>
+
+        <div class="panel">
+            <h3>La Fuerza</h3>
+            <p>"Hazlo o no lo hagas, pero no lo intentes." - Maestro Yoda</p>
+        </div>
+    </div>
+
+    <script>
+        // Lógica para el efecto de "acordeón"
+        const panels = document.querySelectorAll('.panel');
+
+        panels.forEach(panel => {
+            panel.addEventListener('click', () => {
+                removeActiveClasses(); // Cierra los otros
+                panel.classList.add('active'); // Abre el clickeado
+            });
+        });
+
+        function removeActiveClasses() {
+            panels.forEach(panel => {
+                panel.classList.remove('active');
+            });
+        }
+    </script>
 
 </body>
 </html>
