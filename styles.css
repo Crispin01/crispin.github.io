@@ -181,3 +181,40 @@ footer a:hover {
     background-image: url('https://images.unsplash.com/photo-1616440347437-b1c73416efc2?q=80&w=1920&auto=format&fit=crop');
     background-position: top center; /* Ajuste para que se vea mejor */
 }
+/* --- BOTÓN FLOTANTE GAMING --- */
+.btn-gaming {
+    position: fixed; /* Se queda fijo en la pantalla */
+    bottom: 30px;    /* Distancia desde abajo */
+    left: 30px;      /* Distancia desde la izquierda */
+    z-index: 100;    /* Asegura que esté encima de las imágenes */
+    
+    background-color: #6c5ce7; /* Color morado "Gamer" */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px; /* Bordes redondos estilo pastilla */
+    text-decoration: none; /* Quita el subrayado */
+    font-weight: bold;
+    font-family: 'Segoe UI', sans-serif;
+    
+    /* Sombra y Transición */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, background 0.3s;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+/* Efecto al pasar el mouse */
+.btn-gaming:hover {
+    background-color: #5b4cc4; /* Morado más oscuro */
+    transform: translateY(-5px) scale(1.05); /* Sube un poquito y crece */
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.6); /* Resplandor */
+}
+
+/* Ajuste para celulares (para que no tape contenido) */
+@media (max-width: 768px) {
+    .btn-gaming {
+        bottom: 20px;
+        left: 20px;
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+}
