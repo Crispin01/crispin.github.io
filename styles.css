@@ -120,3 +120,46 @@ h1.main-title {
         font-size: 14px;
     }
 }
+
+/* --- ESTILOS DEL FOOTER --- */
+footer {
+    background-color: #111; /* Fondo oscuro igual al título */
+    color: white;
+    text-align: center;
+    padding: 15px 20px; /* Espacio arriba/abajo y lados */
+    z-index: 10; /* Para asegurar que esté por encima de todo */
+    
+    /* Para alinear el texto y los iconos */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    gap: 20px; /* Separación entre el copyright y los enlaces */
+    
+    /* Sombra para separarlo visualmente de las imágenes */
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+}
+
+/* Estilos de los enlaces dentro del footer */
+footer a {
+    color: #ccc; /* Gris claro */
+    text-decoration: none; /* Quitar subrayado */
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    margin: 0 5px; /* Separación entre iconos */
+}
+
+/* Efecto al pasar el mouse por los enlaces */
+footer a:hover {
+    color: #3498db; /* Azul brillante al pasar el mouse */
+    transform: scale(1.1); /* Pequeño efecto de agrandado */
+}
+
+/* --- AJUSTE PARA MÓVILES --- */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column; /* Uno debajo del otro en celular */
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+}
