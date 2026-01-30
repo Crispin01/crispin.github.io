@@ -6,35 +6,46 @@ layout: null
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mundo Gaming</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="stylyes.css">
+    <title>Frases Motivadoras</title>
+
+    <link rel="stylesheet" href="styles.css">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HSC5PS7F3Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-HSC5PS7F3Q');
+    </script>
 </head>
-  {% include header.html %}
+
+{% include header.html %}
 <body>
 
-    <h1 class="main-title">Zona Gamer</h1>
+    <h1 class="main-title">Frases Motivadoras</h1>
 
     <div class="container">
-        
-        <div class="panel resident active">
-            <h3>Resident Evil</h3>
-            <p>"Nuestra vida es como un juego de supervivencia; nunca sabes qué hay detrás de la siguiente puerta." - Leon S. Kennedy</p>
+        <div class="panel active">
+            <h3>La Persistencia</h3>
+            <p>"No importa cuán fuerte golpees, sino cuán fuerte pueden golpearte y seguir avanzando." - Rocky Balboa</p>
         </div>
 
-        <div class="panel starwars">
-            <h3>Star Wars</h3>
-            <p>"El miedo es el camino hacia el lado oscuro. El miedo lleva a la ira, la ira lleva al odio." - Yoda</p>
+        <div class="panel">
+            <h3>El Conocimiento</h3>
+            <p>"La imaginación es más importante que el conocimiento. El conocimiento es limitado." - Albert Einstein</p>
         </div>
 
-        <div class="panel halo">
-            <h3>Halo 4</h3>
-            <p>"No hacemos esto por ser reconocidos, lo hacemos porque es lo correcto. Despiértame cuando me necesites." - Master Chief</p>
+        <div class="panel">
+            <h3>La Fuerza</h3>
+            <p>"Hazlo o no lo hagas, pero no lo intentes." - Maestro Yoda</p>
         </div>
-
     </div>
+
+    <a href="gaming.html" class="btn-gaming">
+       🎮 Ir a Zona Gaming
+    </a>
+
 {% include footer.html %}
-   <!-- JS externo -->
     <script src="script.js"></script>
 </body>
 </html>
