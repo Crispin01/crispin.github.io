@@ -4,167 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frases Motivadoras</title>
-    <style>
-        /* --- ESTILOS GENERALES --- */
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow: hidden; /* Evita scroll innecesario en escritorio */
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
 
-        h1.main-title {
-            text-align: center;
-            margin: 0;
-            padding: 15px;
-            background: #111;
-            color: white;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            z-index: 10;
-        }
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="styles.css">
 
-        /* --- CONTENEDOR DE PANELES --- */
-        .container {
-            display: flex;
-            width: 100%;
-            height: 100%; /* Ocupa el resto de la altura */
-        }
-
-        /* --- ESTILOS DE CADA PANEL --- */
-        .panel {
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            height: 100%;
-            border-radius: 0;
-            color: #fff;
-            cursor: pointer;
-            flex: 0.5; /* Todos empiezan pequeños */
-            margin: 0;
-            position: relative;
-            transition: flex 0.7s cubic-bezier(0.05, 0.6, 0.4, 0.9); /* Animación suave */
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end; /* Texto abajo */
-            padding: 20px;
-            overflow: hidden;
-        }
-
-        /* Capa oscura para que el texto se lea mejor */
-        .panel::before {
-            content: '';
-            position: absolute;
-            top: 0; 
-            left: 0;
-            width: 100%; 
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* Sombra */
-            transition: background 0.5s;
-        }
-
-        /* Estilo cuando el panel está ACTIVO (abierto) */
-        .panel.active {
-            flex: 5; /* Se agranda 10 veces más que los otros */
-        }
-
-        .panel.active::before {
-            background: rgba(0, 0, 0, 0.1); /* Aclara la imagen al activar */
-        }
-
-        /* --- TEXTO DENTRO DE LOS PANELES --- */
-        .panel h3 {
-            font-size: 24px;
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            margin: 0;
-            opacity: 1; /* Siempre visible el título */
-            z-index: 2;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-            transition: opacity 0.3s ease-in 0.4s;
-        }
-
-        .panel p {
-            font-size: 18px;
-            opacity: 0; /* Frase oculta al principio */
-            max-width: 600px;
-            margin-bottom: 60px; /* Espacio para el título */
-            z-index: 2;
-            transform: translateX(-20px);
-            transition: all 0.5s ease-in 0.2s; /* Retraso para que aparezca después de expandirse */
-        }
-
-        /* Mostrar frase solo cuando está activo */
-        .panel.active p {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* --- IMÁGENES DE FONDO (PERSONALIZA AQUÍ) --- */
-        /* Usamos placeholders. Cambia las URL por tus imágenes reales */
-        
-        /* Sección 1: Rocky Balboa */
-        .panel:nth-of-type(1) {
-            background-image: url('https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1920&auto=format&fit=crop'); 
-        }
-
-        /* Sección 2: Einstein (representación) */
-        .panel:nth-of-type(2) {
-            background-image: url('https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=1920&auto=format&fit=crop');
-        }
-
-        /* Sección 3: Yoda / Espacio */
-        .panel:nth-of-type(3) {
-            background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop');
-        }
-
-        /* --- RESPONSIVE (MÓVILES) --- */
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column; /* Apilar verticalmente */
-            }
-            
-            .panel {
-                width: 100%; /* Ancho completo */
-            }
-            
-            .panel.active {
-                flex: 5; /* Crece en altura */
-            }
-
-            .panel h3 {
-                font-size: 18px;
-            }
-            
-            .panel p {
-                font-size: 14px;
-            }
-        }
-    </style>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HSC5PS7F3Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-HSC5PS7F3Q');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HSC5PS7F3Q"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-HSC5PS7F3Q');
+    </script>
 </head>
 <body>
 
     <h1 class="main-title">Frases Motivadoras</h1>
 
     <div class="container">
-        <div class="panel active"> <h3>La Persistencia</h3>
+        <div class="panel active">
+            <h3>La Persistencia</h3>
             <p>"No importa cuán fuerte golpees, sino cuán fuerte pueden golpearte y seguir avanzando." - Rocky Balboa</p>
         </div>
 
@@ -179,23 +38,7 @@
         </div>
     </div>
 
-    <script>
-        // Lógica para el efecto de "acordeón"
-        const panels = document.querySelectorAll('.panel');
-
-        panels.forEach(panel => {
-            panel.addEventListener('click', () => {
-                removeActiveClasses(); // Cierra los otros
-                panel.classList.add('active'); // Abre el clickeado
-            });
-        });
-
-        function removeActiveClasses() {
-            panels.forEach(panel => {
-                panel.classList.remove('active');
-            });
-        }
-    </script>
-
+    <!-- JS externo -->
+    <script src="script.js"></script>
 </body>
 </html>
