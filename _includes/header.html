@@ -1,16 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N9QGH8HT');</script>
-<!-- End Google Tag Manager -->
-    
-<!-- Google tag (gtag.js) -->
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N9QGH8HT');</script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HSC5PS7F3Q"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -21,27 +16,48 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     <meta charset="UTF-8">
     <title>César Vallejo</title>
-    <meta name="geo.region" content="PE-LIM" />
-    <meta name="geo.placename" content="Villa El Salvador" />
-    <meta name="geo.position" content="-12.2150;-76.9430" />
-    <meta name="ICBM" content="-12.2150, -76.9430" />
-    <meta name="author" content="Miguel Abad" />
     <meta name="description" content="Poemas de Cesar Vallejo." />
-    
-    <meta property="og:title" content="Poemas de Cesar Vallejo" />
-    <meta property="og:description" content="Conoce los poemas de Cesar Vallejo y su historia de la mano del magnifico docente Miguel Abad" />
-    <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRldfqwpTUlETlaoc0dQDt9hNFilKxklTZEpw&s" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:url" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRldfqwpTUlETlaoc0dQDt9hNFilKxklTZEpw&s" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_PE" />
     <link rel="stylesheet" href="styles.css">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WJW9JHWJ"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N9QGH8HT"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    ```
+
+---
+
+### 2. Corregir `index.html` (Reintegrar los Paneles)
+Aquí es donde unimos el texto de Vallejo con el diseño de los paneles para que el JS funcione. He creado 3 secciones basadas en tu texto.
+
+```html
+---
+layout: null
+---
+{% include header.html %}
+
+<h1 class="main-title">César Vallejo: El Poeta Universal</h1>
+
+<div class="container">
     
+    <div class="panel active" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/87/C%C3%A9sar_Vallejo_1929.jpg');">
+        <h3>Biografía</h3>
+        <p>1892–1938. Poeta peruano, considerado uno de los más grandes innovadores de la poesía del siglo XX.</p>
+    </div>
+
+    <div class="panel" style="background-image: url('https://e.rpp-noticias.io/normal/2019/04/15/285728_778648.jpg');">
+        <h3>Su Estilo</h3>
+        <p>Su obra se caracteriza por una profunda preocupación humana, social y la experimentación con el lenguaje.</p>
+    </div>
+
+    <div class="panel" style="background-image: url('https://www.casadelaliteratura.gob.pe/wp-content/uploads/2018/03/vallejo-paris.jpg');">
+        <h3>Obras Maestras</h3>
+        <p>Los heraldos negros (1919), Trilce (1922), Poemas humanos (1939) y España, aparta de mí este cáliz.</p>
+    </div>
+
+</div>
+
+{% include footer.html %}
+<script src="script.js"></script>
+</body>
+</html>
