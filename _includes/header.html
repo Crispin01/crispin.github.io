@@ -6,6 +6,14 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-N9QGH8HT');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{{ page.title | default: "Mi Sitio Web" }}</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HSC5PS7F3Q"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -13,12 +21,6 @@
         gtag('js', new Date());
         gtag('config', 'G-HSC5PS7F3Q');
     </script>
-    
-    <meta charset="UTF-8">
-    <title>César Vallejo</title>
-    <meta name="description" content="Poemas de Cesar Vallejo." />
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N9QGH8HT"
@@ -27,37 +29,19 @@
 
 ---
 
-### 2. Corregir `index.html` (Reintegrar los Paneles)
-Aquí es donde unimos el texto de Vallejo con el diseño de los paneles para que el JS funcione. He creado 3 secciones basadas en tu texto.
+### PASO 2: Tu `footer.html` (El que cierra todo)
+Aquí pondremos el script. Al ponerlo aquí, funcionará automáticamente en TODAS tus páginas.
 
+**Archivo:** `_includes/footer.html`
 ```html
----
-layout: null
----
-{% include header.html %}
+    <footer>
+        <div>© 2025 Mi Web</div>
+        <div>
+            <a href="#" target="_blank"><i class="fab fa-twitch"></i> Twitch</a> | 
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
+    </footer>
 
-<h1 class="main-title">César Vallejo: El Poeta Universal</h1>
-
-<div class="container">
-    
-    <div class="panel active" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/87/C%C3%A9sar_Vallejo_1929.jpg');">
-        <h3>Biografía</h3>
-        <p>1892–1938. Poeta peruano, considerado uno de los más grandes innovadores de la poesía del siglo XX.</p>
-    </div>
-
-    <div class="panel" style="background-image: url('https://e.rpp-noticias.io/normal/2019/04/15/285728_778648.jpg');">
-        <h3>Su Estilo</h3>
-        <p>Su obra se caracteriza por una profunda preocupación humana, social y la experimentación con el lenguaje.</p>
-    </div>
-
-    <div class="panel" style="background-image: url('https://www.casadelaliteratura.gob.pe/wp-content/uploads/2018/03/vallejo-paris.jpg');">
-        <h3>Obras Maestras</h3>
-        <p>Los heraldos negros (1919), Trilce (1922), Poemas humanos (1939) y España, aparta de mí este cáliz.</p>
-    </div>
-
-</div>
-
-{% include footer.html %}
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
