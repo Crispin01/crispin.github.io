@@ -1,0 +1,101 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #8b0000; /* Rojo sangre Umbrella */
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-bottom: 5px solid #000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+nav {
+    background-color: #1f1f1f;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+nav a {
+    color: #dcdcdc;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff3333; /* Rojo brillante al pasar el mouse */
+    text-decoration: none;
+}
+
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+    background-color: #1e1e1e;
+    min-height: 60vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+
+h2 {
+    color: #ff4444;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* Estilo para las imágenes */
+img.responsive {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #444;
+    margin: 20px 0;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #000;
+    color: #888;
+    text-align: center;
+    padding: 20px;
+    margin-top: 0;
+    border-top: 3px solid #8b0000;
+}
+
+footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ff4444;
+}
