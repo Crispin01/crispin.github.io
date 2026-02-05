@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://crispin01.github.io/crispin.github.io/</loc>
+    <lastmod>2026-02-04</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://crispin01.github.io/crispin.github.io/juegos.html</loc>
+    <lastmod>2026-02-04</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://crispin01.github.io/crispin.github.io/peliculas.html</loc>
+    <lastmod>2026-02-04</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+</urlset>
